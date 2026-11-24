@@ -1,0 +1,86 @@
+const defaultSubjects = [
+  {
+    name: 'Data Structures & Algorithms',
+    description: 'Core concepts of data organization, computational complexity, searching, and sorting.',
+    icon: 'Binary',
+    color: '#7C3AED',
+    difficulty: 'all',
+    topics: [
+      { name: 'Arrays & Dynamic Sizing', description: 'Contiguous memory structures, bounds checking, and amortized operations', difficulty: 'beginner', estimatedTime: 30, tags: ['DSA', 'Arrays'] },
+      { name: 'Linked Lists & Pointers', description: 'Node references, singly, doubly, and circular linked lists', difficulty: 'beginner', estimatedTime: 40, tags: ['DSA', 'Pointers'] },
+      { name: 'Stacks & Queues', description: 'LIFO and FIFO data structures with real-world applications and expression evaluation', difficulty: 'beginner', estimatedTime: 35, tags: ['DSA'] },
+      { name: 'Binary Trees & Traversals', description: 'Pre-order, In-order, Post-order and Level-order searching algorithms', difficulty: 'intermediate', estimatedTime: 50, tags: ['Trees'] },
+      { name: 'Graph Algorithms & BFS/DFS', description: 'Shortest path, cycle detection, topological sorting, and Dijkstra algorithm', difficulty: 'advanced', estimatedTime: 60, tags: ['Graphs'] },
+      { name: 'Dynamic Programming', description: 'Overlapping subproblems, memoization, tabulation, and optimal substructure', difficulty: 'advanced', estimatedTime: 75, tags: ['DP', 'Optimization'] },
+    ],
+  },
+  {
+    name: 'Database Management Systems',
+    description: 'Relational algebra, SQL, normalization, transactions, and NoSQL architecture.',
+    icon: 'Database',
+    color: '#2563EB',
+    difficulty: 'all',
+    topics: [
+      { name: 'Relational Model & Keys', description: 'Primary keys, foreign keys, candidate keys, and referential integrity', difficulty: 'beginner', estimatedTime: 30, tags: ['DBMS', 'Relational'] },
+      { name: 'SQL Query Mastery', description: 'Joins, subqueries, group by, aggregations, and window functions', difficulty: 'intermediate', estimatedTime: 45, tags: ['SQL'] },
+      { name: 'Database Normalization', description: '1NF, 2NF, 3NF, and BCNF anomaly elimination', difficulty: 'intermediate', estimatedTime: 50, tags: ['Normalization'] },
+      { name: 'Transactions & ACID Properties', description: 'Atomicity, Consistency, Isolation levels, and Durability guarantees', difficulty: 'intermediate', estimatedTime: 40, tags: ['Transactions'] },
+      { name: 'Indexing & B-Trees', description: 'Clustered vs non-clustered indexes and query optimization pipelines', difficulty: 'advanced', estimatedTime: 55, tags: ['Indexing', 'Performance'] },
+      { name: 'NoSQL vs RDBMS Architecture', description: 'Document stores, key-value, CAP theorem, and horizontal scalability', difficulty: 'intermediate', estimatedTime: 45, tags: ['NoSQL', 'Architecture'] },
+    ],
+  },
+  {
+    name: 'Operating Systems',
+    description: 'Process management, concurrency, virtual memory, scheduling, and file systems.',
+    icon: 'Cpu',
+    color: '#059669',
+    difficulty: 'all',
+    topics: [
+      { name: 'Processes & Threads', description: 'PCB, context switching, multitasking, and thread pools', difficulty: 'beginner', estimatedTime: 35, tags: ['OS', 'Processes'] },
+      { name: 'CPU Scheduling Algorithms', description: 'FCFS, SJF, Round Robin, and Multi-level feedback queues', difficulty: 'intermediate', estimatedTime: 45, tags: ['CPU', 'Scheduling'] },
+      { name: 'Process Synchronization & Deadlocks', description: 'Semaphores, mutexes, critical sections, and Banker algorithm', difficulty: 'advanced', estimatedTime: 60, tags: ['Deadlocks', 'Concurrency'] },
+      { name: 'Virtual Memory & Paging', description: 'Page replacement algorithms (FIFO, LRU, Optimal) and TLB caching', difficulty: 'intermediate', estimatedTime: 50, tags: ['Memory', 'Paging'] },
+    ],
+  },
+  {
+    name: 'Computer Networks',
+    description: 'OSI model, TCP/IP, routing protocols, sockets, and web security protocols.',
+    icon: 'Network',
+    color: '#D97706',
+    difficulty: 'all',
+    topics: [
+      { name: 'OSI vs TCP/IP Models', description: 'Layer responsibilities, encapsulation, and protocol stacks', difficulty: 'beginner', estimatedTime: 30, tags: ['Networking', 'OSI'] },
+      { name: 'IP Addressing & Subnetting', description: 'IPv4, IPv6, CIDR notation, and subnet masks calculation', difficulty: 'intermediate', estimatedTime: 50, tags: ['IP', 'Subnetting'] },
+      { name: 'Transport Layer: TCP vs UDP', description: 'Three-way handshake, flow control, congestion control, and packet reliability', difficulty: 'intermediate', estimatedTime: 40, tags: ['TCP', 'UDP'] },
+      { name: 'Application Protocols & Security', description: 'HTTP/HTTPS, DNS, SSL/TLS, and modern firewalls', difficulty: 'intermediate', estimatedTime: 45, tags: ['Security', 'HTTP'] },
+    ],
+  },
+  {
+    name: 'Artificial Intelligence & Machine Learning',
+    description: 'Supervised and unsupervised learning, neural networks, NLP, and evaluation metrics.',
+    icon: 'Sparkles',
+    color: '#EC4899',
+    difficulty: 'all',
+    topics: [
+      { name: 'Supervised Learning & Regressions', description: 'Linear, logistic regression, gradient descent mechanics, and loss functions', difficulty: 'beginner', estimatedTime: 40, tags: ['ML', 'Regression'] },
+      { name: 'Decision Trees & Ensembles', description: 'Random forests, boosting, bagging, and feature importance analysis', difficulty: 'intermediate', estimatedTime: 50, tags: ['Trees', 'ML'] },
+      { name: 'Neural Networks & Deep Learning', description: 'Perceptrons, backpropagation, activation functions, and gradient flow', difficulty: 'advanced', estimatedTime: 65, tags: ['Deep Learning', 'AI'] },
+      { name: 'Evaluation Metrics & Overfitting', description: 'Confusion matrix, precision, recall, F1-score, and bias-variance tradeoff', difficulty: 'intermediate', estimatedTime: 35, tags: ['Metrics'] },
+    ],
+  },
+  {
+    name: 'Software Engineering & System Design',
+    description: 'Agile methodologies, design patterns, microservices, and scalable architectures.',
+    icon: 'Layers',
+    color: '#8B5CF6',
+    difficulty: 'all',
+    topics: [
+      { name: 'Software Development Lifecycle (SDLC)', description: 'Waterfall, Agile, Scrum sprints, and CI/CD pipelines', difficulty: 'beginner', estimatedTime: 30, tags: ['SDLC', 'Agile'] },
+      { name: 'SOLID Principles & Clean Code', description: 'Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion', difficulty: 'intermediate', estimatedTime: 45, tags: ['SOLID', 'OOP'] },
+      { name: 'Design Patterns in Practice', description: 'Creational, Structural, and Behavioral patterns (Singleton, Factory, Observer)', difficulty: 'intermediate', estimatedTime: 55, tags: ['Patterns'] },
+      { name: 'Microservices & Scalability', description: 'Load balancers, caching strategies, message queues, and API gateways', difficulty: 'advanced', estimatedTime: 60, tags: ['System Design'] },
+    ],
+  },
+];
+
+module.exports = { defaultSubjects };

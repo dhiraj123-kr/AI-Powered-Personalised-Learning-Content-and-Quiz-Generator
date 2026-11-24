@@ -1,0 +1,23 @@
+{
+  "name": "ai-powered-personalised-learning-platform",
+  "version": "1.0.0",
+  "description": "AI-Powered Personalised Learning Content and Quiz Generator",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "ai",
+    "gemini",
+    "education",
+    "learning-platform",
+    "quiz-generator",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT"
+}
